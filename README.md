@@ -65,6 +65,7 @@ This project is a Spring Boot application designed to manage Categories and Prod
      {
          "name": "Smartphone",
          "price": 699.99,
+         "quantity": 50,
          "categoryId": 1
      }
      ```
@@ -81,6 +82,7 @@ This project is a Spring Boot application designed to manage Categories and Prod
      {
          "name": "Laptop",
          "price": 999.99,
+         "quantity": 20,
          "categoryId": 2
      }
      ```
@@ -94,6 +96,27 @@ This project is a Spring Boot application designed to manage Categories and Prod
 ## Relationship
 - **Category-Product Relationship:**
   - A category can have multiple products (One-to-Many).
+  - Example:
+    ```json
+    {
+        "cid": 1,
+        "cname": "Electronics",
+        "products": [
+            {
+                "pid": 101,
+                "pname": "Smartphone",
+                "price": 699.99,
+                "quantity": 50
+            },
+            {
+                "pid": 102,
+                "pname": "Laptop",
+                "price": 999.99,
+                "quantity": 20
+            }
+        ]
+    }
+    ```
 
 ---
 
@@ -138,3 +161,5 @@ This project is a Spring Boot application designed to manage Categories and Prod
 - REST API
 
 ---
+
+
