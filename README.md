@@ -5,6 +5,33 @@ This project is a Spring Boot application designed to manage Categories and Prod
 
 ---
 
+## Relationship
+- **Category-Product Relationship:**
+  - A category can have multiple products (One-to-Many).
+  - Example:
+    ```json
+    {
+        "cid": 1,
+        "cname": "Electronics",
+        "products": [
+            {
+                "pid": 101,
+                "pname": "Smartphone",
+                "price": 699.99,
+                "quantity": 50
+            },
+            {
+                "pid": 102,
+                "pname": "Laptop",
+                "price": 999.99,
+                "quantity": 20
+            }
+        ]
+    }
+    ```
+
+---
+
 ## Requirements
 - **Spring Boot**
 - **REST Controller**
@@ -93,33 +120,6 @@ This project is a Spring Boot application designed to manage Categories and Prod
 
 ---
 
-## Relationship
-- **Category-Product Relationship:**
-  - A category can have multiple products (One-to-Many).
-  - Example:
-    ```json
-    {
-        "cid": 1,
-        "cname": "Electronics",
-        "products": [
-            {
-                "pid": 101,
-                "pname": "Smartphone",
-                "price": 699.99,
-                "quantity": 50
-            },
-            {
-                "pid": 102,
-                "pname": "Laptop",
-                "price": 999.99,
-                "quantity": 20
-            }
-        ]
-    }
-    ```
-
----
-
 ## Pagination
 - **Server-side pagination** is implemented for both categories and products to efficiently handle large datasets.
 
@@ -159,7 +159,3 @@ This project is a Spring Boot application designed to manage Categories and Prod
 - MySQL/PostgreSQL
 - Maven
 - REST API
-
----
-
-
