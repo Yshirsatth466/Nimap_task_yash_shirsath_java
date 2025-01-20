@@ -1,6 +1,8 @@
 package com.base.ServiceImp;
 
+import com.base.model.Category;
 import com.base.model.Product;
+import com.base.repository.CategoryRepository;
 import com.base.repository.ProductRepository;
 import com.base.ServiceI.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +17,21 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    CategoryRepository categoryRepository;
 
     @Override
     public Product createProduct(Product product) {
+        
+       
+            Long categoryId = product.getCategory().getCid();           
+            Category category = categoryRepository.findById(categoryId)
+                    .orElseThrow(() -> new RuntimeException("Category not found with ID: " + categoryId));
+            product.setCategory(category); 
+        
+        
         return productRepository.save(product);
     }
-
     
 
     @Override
